@@ -26,11 +26,11 @@ Input → processing → fetch data → storage
 
 We are going to implement it using a decoupled serverless architecture.
 
-
+`
 User → API Gateway → Producer Lambda → SQS Queue → Consumer Lambda → Book API → DynamoDB
                                           │
                                           └── DLQ (Dead Letter Queue)
-
+`
 -------------------------------------------------------------------------------------------------------------------------------
 
 WHY?
@@ -92,11 +92,11 @@ HOW?
 -------
 
 Architecture:
-
+`
 User (POST /book-request) → API Gateway Triggers → Producer Lambda → SQS → Consumer Lambda → Book API → DynamoDB
    ↑                           		↓  ↑		           ↓
    └--------------<---------<------└-----<-----<-----└---- HTTP response (request accepted + request_id)
-
+`
 
 FLOW:
 
