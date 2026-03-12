@@ -26,11 +26,10 @@ Input → processing → fetch data → storage
 
 We are going to implement it using a decoupled serverless architecture.
 
-`
-User → API Gateway → Producer Lambda → SQS Queue → Consumer Lambda → Book API → DynamoDB
-                                          │
-                                          └── DLQ (Dead Letter Queue)
-`
+
+`User → API Gateway → Producer Lambda → SQS Queue → Consumer Lambda → Book API → DynamoDB`
+`                                         │`
+`                                         └── DLQ (Dead Letter Queue)`
 -------------------------------------------------------------------------------------------------------------------------------
 
 WHY?
